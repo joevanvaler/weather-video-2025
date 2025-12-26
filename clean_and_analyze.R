@@ -69,5 +69,6 @@ temp_data[temp_data$GHCN_ID == 'USW00004853', relevant_cols]
 sorted_cities <- as.data.frame(city_info[order(as.double(city_info[, 3])),])
 names(sorted_cities) <- c('city', 'id', 'avg_fluct')
 View(sorted_cities)
+N <- nrow(sorted_cities)
 View(head(sorted_cities[,c('city','avg_fluct')], n=10))
-View(tail(sorted_cities, n=10))
+View(sorted_cities[N:(N-9),])
